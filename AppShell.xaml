@@ -17,4 +17,9 @@
         ContentTemplate="{DataTemplate local:Progress}"
         Route="_Progress_"/>
 
+    <ShellContent
+        Title="SQLlitePage"
+        ContentTemplate="{DataTemplate local:SQLlitePage}"
+        Route="_SQLlitePage_"/>
+
 </Shell>

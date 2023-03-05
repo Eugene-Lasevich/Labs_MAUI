@@ -2,25 +2,36 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.SQLlitePage"
-             Title="SQLlitePage">
-    <VerticalStackLayout>
-        <Picker x:Name="picker" 
+             Title="SQLlitePage"
+             xmlns:local="clr-namespace:MauiApp1"
+             xmlns:model="clr-namespace:MauiApp1.Lab3.Entities"
+             x:DataType="local:SQLlitePage"
+             BackgroundColor="#000"
+             Loaded="OnLoaded">
+
+
+    <ScrollView VerticalOptions="Fill"
+                HorizontalOptions="Fill">
+        <VerticalStackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Picker x:Name="picker" 
                 VerticalOptions="Start"
                 HorizontalOptions="Center"
-                BackgroundColor="#fff" 
+                BackgroundColor="Green" 
                 TextColor="#000" 
                 Title="Select position" 
+                SelectedIndexChanged="OnPicker"
                 ItemDisplayBinding="{Binding Name}"
-                ItemsSource="{Binding PositionList}"/>
-
-        <ListView x:Name="listView" 
-                     Margin="40"
+                ItemsSource="{Binding PerformersList}"
+                />
+            
+            <ListView x:Name="listView" 
+               
                       VerticalOptions="End"
                       HorizontalOptions="Center"
                       SelectionMode="None"
                       BackgroundColor="#000">
             <ListView.ItemTemplate>
-                <DataTemplate >
+            <DataTemplate  x:DataType ="model:Performer" >
                     <ViewCell>
                         <Label Text="{Binding Name}"
                                TextColor="#fff"/>
@@ -28,5 +39,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button x:Name="btn"  BackgroundColor="Red" Clicked="OnBtn"/>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
