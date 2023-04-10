@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Lab4.Conventor"
+             xmlns:local="clr-namespace:MauiApp1"
+             Title="Conventor"
+             Loaded="OnLoaded">
+    
+    <ScrollView>
+      
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row ="0" Grid.Column="0" x:Name="USD" Text="USD"  HorizontalOptions="Center"/>
+                <Label Grid.Row ="1" Grid.Column="0" x:Name="EUR" Text="EUR" HorizontalOptions="Center"/>
+                <Label Grid.Row ="2" Grid.Column="0" x:Name="PLN" Text="PLN" HorizontalOptions="Center"/>
+                <Label Grid.Row ="3" Grid.Column="0"  x:Name="CNY" Text="CNY" HorizontalOptions="Center"/>
+                <DatePicker Grid.Row ="4" Grid.Column="0" Grid.ColumnSpan="2"  
+                            x:Name="datePicker" 
+                            HorizontalOptions="CenterAndExpand" 
+                            MinimumWidthRequest="200" DateSelected="DateSelected" />
+
+                <Picker Grid.Row ="5" Grid.Column="0" ItemsSource="{Binding RatesList}" ItemDisplayBinding="{Binding Cur_Abbreviation}" 
+                        x:Name="p5" Title ="Currenies" VerticalTextAlignment="End"                        
+                        HorizontalTextAlignment="Center"
+                        SelectedIndexChanged="OnPicker"/>
+                
+                <Label Grid.Row ="6" Grid.Column="0"  Text="BYN" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+
+                <Label Grid.Row ="0" Grid.Column="1" Text="0" x:Name="l1" HorizontalOptions="Center"/>
+                <Label Grid.Row ="1" Grid.Column="1" Text="0" x:Name="l2" HorizontalOptions="Center" />
+                <Label Grid.Row ="2" Grid.Column="1" Text="0" x:Name="l3" HorizontalOptions="Center" />
+                <Label Grid.Row ="3" Grid.Column="1" Text="0" x:Name="l4" HorizontalOptions="Center"/>
+                <Entry Grid.Row="5" Grid.Column="1" Keyboard="Numeric" x:Name="OtherCur" />
+                <Entry Grid.Row="6" Grid.Column="1" Keyboard="Numeric" x:Name="Byn" Text="1" />
+
+
+            </Grid>
+
+
+    </ScrollView>
+
+</ContentPage>

@@ -22,4 +22,9 @@
         ContentTemplate="{DataTemplate local:SQLlitePage}"
         Route="_SQLlitePage_"/>
 
+    <ShellContent
+        Title="Conventor"
+        ContentTemplate="{DataTemplate local:Lab4.Conventor}"
+        Route="_Conventor_"/>
+
 </Shell>
